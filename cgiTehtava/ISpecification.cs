@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace cgiTehtava
 {
-    class Program
+    public interface ISpecification<in TEntity>
     {
-        static void Main(string[] args)
-        {
-        }
+        IEnumerable<string> ReasonsForDissatisfaction { get; }
+        bool IsSatisfiedBy(TEntity entity);
     }
 }
